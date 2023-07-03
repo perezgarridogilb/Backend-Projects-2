@@ -1,5 +1,7 @@
 # Backend-Projects-2
 
+Este repositorio contiene algunos proyectos backend de manera diversificada que he hecho con el objetivo de seguir y/o estar en constante aprendizaje.
+
 ### Code smell
 Hace referencia al mal olor del código. Este concepto no se refiere a errores técnicos, sino a errores de orden y diseño. En este caso el profesor dió el ejemplo de abstracción (para que sea mantenible).
 
