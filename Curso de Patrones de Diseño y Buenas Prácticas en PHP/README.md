@@ -193,7 +193,109 @@ Cuando esto sucede lo que debemos preguntarnos es que si la relación de herenci
 ## Interface Segregation Principle
 El Interface Segregation Principle establece que los clientes de un programa sólo deberían conocer de éste los métodos que realmente usan.
 
+*Los clientes de un programa dado sólo deberían conocer de éste aquellos métodos que realmente usan*.
+
+- Software factory
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 1 37 31 p m" src="https://github.com/perezgarridogilb/Backend-projects/assets/56992179/bea8906a-ba8a-4d3d-8d77-171a77b9c988">
+
+- Programador
+Implementa workable, puede codear
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 1 37 57 p m" src="https://github.com/perezgarridogilb/Backend-projects/assets/56992179/539b5b3a-b017-4b66-9347-2bc96a337973">
+
+- Tester
+Implementa workable, no puede codear, siempre da una excepción, no debería estár
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 1 38 35 p m" src="https://github.com/perezgarridogilb/Backend-projects/assets/56992179/0ce9d208-a65a-4fec-9d4e-c11648dd3936">
+
+- Procesamiento del proyecto (lo cual hasta aquí está mal)
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 1 42 14 p m" src="https://github.com/perezgarridogilb/Backend-projects/assets/56992179/283e7e10-70f3-4db3-a60e-7a10f2def365">
+
+- Solución propuesta
+Se parte en dos la interface Workable en dos
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 40 18 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/e569de30-ca01-4418-af11-8b78b485d5b9">
+
+- Las clases
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 45 11 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/3db1f4e2-38c4-417f-91e8-dc2d8ba44ee6">
+
+- Procesamiento del proyecto. Queda más sencillo y más mantenible
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 46 00 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/ac7a1347-3730-4731-be4f-8504c481ad6a">
+
 ## Dependency Inversion Principle
-Los módulos de alto nivel no deben depender de los de bajo nivel, ambos deben depender de abstracciones.
+Dependency Inversion Principle detalla que los módulos de alto nivel no deben depender de los de bajo nivel, ambos deben depender de abstracciones.
+
 Las abstracciones no deben depender de los detalles, los detalles deben depender de las abstracciones.
 
+*La idea de este principio es ver cómo se vinculan estas clases de modo que la dependencia no sea realmente muy fuerte, sino que sea un poco más desacoplada*.
+
+### Reglas
+
+- **Los módulos de alto nivel no deben depender de los de bajo nivel**, ambos deben depender de abstracciones.
+- **Las abstracciones no deben depender de los detalles**, los detalles deben depender de las abstracciones.
+
+### Ejemplo. Sistema de notificaciones
+
+- Enviarle mensajes al usuario por diferentes canales, se sirve de estas clases de medio en el constructor
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 55 20 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/838abf69-c598-401c-ad2f-a47d704c9f77">
+
+- Podemos tener entonces un método Notify, que recibe un usuario, la severidad del mensaje que queremos enviar y el propio mensaje para enviar el mensaje según el canal que corresponda según las reglas que establece el negocio
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 55 25 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/e53ecdc4-53a1-478a-b29a-fed99d09c6a7">
+
+- Problema, estamos haciendo una dependencia dura del notificador con sus clases auxiliares, ya que estamos creando los objetos dentro del propio constructor de la clase Notify
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 3 55 51 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/f36a396e-ffab-47e1-9b70-bcaaf34d42fe">
+
+- Solución propuesta, de modo que si se necesita hacer un cambio ya no se están inicializando las clases directamente en el constructor
+<img width="1280" alt="Captura de Pantalla 2023-07-04 a la(s) 4 07 01 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/8927e0f0-0cd8-4f5d-be72-e9b954a24605">
+
+## Singleton
+
+Los patrones de diseño son soluciones de arquitectura de software aplicables a diferentes problemas.
+
+El patrón Singleton permite restringir la creación de objetos pertenecientes a una clase o al valor de un tipo a un único objeto.
+
+###
+
+Este patrón se puede pensar como un patrón de creación o de comportamiento. La idea consiste en tener un clase que tenga una sola instancia en nuestra aplicación. Usualmente este patrón se utiliza para optimizar recursos.
+
+Este se encarga de evitar a toda costa de exista más de una instancia. Para conseguir esto debemos hacer private el constructor. Para instanciar esta clase, crearemos una función que normalmente se llamará getInstance y está se encargará de comprobar si ya existe una instancia, si no existe una, la función la creará.
+
+
+## Factory
+El patron Factory es creacional, se utiliza para ayudar a la creación de nuevas instancias de objetos.
+
+
+```
+<?php 
+
+class Automobile {
+
+    private $vehicleMake;
+    private $vehicleModel;
+
+    public function __construct($make, $model) {
+        $this->vehicleMake = $make;
+        $this->vehicleModel = $model;
+    }
+
+    public function getMakeAndModel() {
+        return $this->vehicleMake.' - '.$this->vehicleModel;
+    }
+}
+
+
+class AutomobileFactory {
+
+    private static $model;
+
+    public static function create($make) {
+        self::$model = date('Y');
+        return new Automobile($make, self::$model);
+    }
+}
+
+$renault = new Automobile("Renault", 2019);
+$toyota = AutomobileFactory::create("Toyota");
+
+
+echo $renault->getMakeAndModel().PHP_EOL;
+echo $toyota->getMakeAndModel().PHP_EOL;
+
+```
