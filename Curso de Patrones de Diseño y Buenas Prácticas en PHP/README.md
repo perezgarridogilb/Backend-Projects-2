@@ -354,3 +354,47 @@ Existen dos tipos de testing:
 
 ![Captura de Pantalla 2023-07-05 a la(s) 9 56 43 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/2d1a57c4-3e20-4f74-b488-5698e6256c21)
 
+##
+
+Documentación
+¿Qué documentar?
+
+Como implementar nueva funcionalidad.
+Como se realizan las pruebas.
+Lo mínimo que necesita las personas que quieren colaborar o heredar tu proyecto.
+
+¿Como documentar?
+
+UML como documentación.
+¿Dónde documentar?
+
+Propio código.
+Sistema de documentación.
+Wiki
+Ficheros externos.
+README
+¿Cuándo documentar?
+
+Documentar inmediatamente después de codear.
+Cuando se resuelve un problema, documentar la solución
+
+## A quién beneficia el código bien escrito
+La primera persona a quien beneficiará es a nosotros mismos, lograremos entender nuestro código no importa el tiempo que pase.
+
+Nuestros compañeros lograrán entender muchísimo más nuestro código luego de todas las buenas prácticas que hemos realizado. Y finalmente a nuestro cliente que aunque no pueda ver al detalle nuestro código, estará mejor organizado y podrá ser leído por cualquier persona.
+
+¿A quién beneficia el código limpio?
+- A tí
+- A tus compañeros
+- A tus clientes
+
+### Ejes que hacen a la calidad del código
+- Legibilidad
+- Mantenibilidad
+- Testeabilidad (preparado para ser testeado de forma automatizada)
+
+### Temas a tener en cuenta
+- La forma en que escribes el código
+- Los nombres que utilizas
+- El diseño de tus clases
+- No sólo se trata de código, la documentación también es importante
