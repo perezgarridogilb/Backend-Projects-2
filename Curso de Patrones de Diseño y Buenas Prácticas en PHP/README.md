@@ -260,7 +260,23 @@ Este se encarga de evitar a toda costa de exista más de una instancia. Para con
 
 ## Factory
 El patron Factory es creacional, se utiliza para ayudar a la creación de nuevas instancias de objetos.
+- Cuando la creación de un objeto es muy complejo
+- Requiere de muchos parámetros
+- La propia operación del objeto requiere hacer operaciones complejas
+- Ciertos cálculos díficiles o alguna cuestión así
 
+
+### Ejemplo de una clase automóvil
+Clase automóvil, que el constructor recibe la marca y el modelo, simplemente con eso crea el objeto. Una factory que podríamos utilizar puede ser automóvil factory, bajando la complejidad de la creación del automóvil
+
+![Captura de Pantalla 2023-07-04 a la(s) 10 45 03 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/41f29002-4e8e-4129-9ae0-b697248fc11d)
+
+- Pasamos de dos parámetros a uno, donde es muy probable que los autos que salgan en este año lleven el valor 2019, lo cual sería redundante pasarle el valor 2019 a cada instancia de creación del auto. Eso es lo que aportaría esa factory, la forma de utilizarlo es esta:
+    - De esta manera estamos creando el objeto sin utilizar la factory, ya no pasamos el parámetro 2019, simplemente le estamos diciendo que queremos crear un nuevo auto, que internamente va a tener el parámetro 2019 en su creación, de este modo lo que estamos logrando es un código más abstracto, **más reutilizable**
+
+![Captura de Pantalla 2023-07-04 a la(s) 10 45 09 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/12bd736f-f2d5-4572-ab3a-e48b30093190)
+
+- Aporte de la comunidad:
 
 ```
 <?php 
@@ -299,3 +315,42 @@ echo $renault->getMakeAndModel().PHP_EOL;
 echo $toyota->getMakeAndModel().PHP_EOL;
 
 ```
+
+## Command
+
+El patrón Command permite solicitar una operación a un objeto sin conocer realmente el contenido de esta operación, ni el receptor real de la misma. Para ello se encapsula la petición como un objeto, con lo que además facilita la parametrización de los métodos.
+
+## Introducción al Testing Automatizado
+
+### Problemas del testing manual
+- Costoso
+- Lento
+- Poco confiable
+
+*Testing automatizado*: Se trata de escribir programas que sean capaces de probar programas y reportar los fallos
+- Menos costoso
+- Más confiable
+
+*Hay cosas que no se pueden automatizar como lo intuitivo y agradable visualmente*
+
+Existen dos tipos de testing:
+1. **Unit Testing**: Evaluamos el funcionamiento de los componentes individualmente (fomenta el refactory)
+
+- Ejemplo:
+    - phpUnit
+    - Extiende de TestCase
+    - Empieza con testArbitrario
+    - assert(comparar1, comparar2)
+
+![Captura de Pantalla 2023-07-05 a la(s) 9 54 57 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/45013d4b-e4e1-4f67-9b18-d3ff9f4a2921)
+
+- Problema (el sistema en su conjunto no valora su objetivo)
+
+![Captura de Pantalla 2023-07-05 a la(s) 9 56 33 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/0388cfa2-5395-4d97-b447-9288e372da5e)
+
+2. **Integration Testing**: Validar la interacción entre los componentes y el sistema completo
+
+- Ejemplo, testear una aplicación web, que arroje HTTP 200 acceder a cierta página
+
+![Captura de Pantalla 2023-07-05 a la(s) 9 56 43 p m](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/2d1a57c4-3e20-4f74-b488-5698e6256c21)
+
