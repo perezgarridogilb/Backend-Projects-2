@@ -398,3 +398,7 @@ Nuestros compañeros lograrán entender muchísimo más nuestro código luego de
 - Los nombres que utilizas
 - El diseño de tus clases
 - No sólo se trata de código, la documentación también es importante
+
+**Prueba**
+
+![Prueba](https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/d691f7b7-6341-499e-a450-2e442e8981cd)
