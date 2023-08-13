@@ -93,7 +93,29 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 
 ## Tipos de instancias EC2
 
+<img width="616" alt="Captura de Pantalla 2023-08-10 a la(s) 3 39 36 p m" src="https://github.com/perezgarridogilb/Engineering-Project-de-Aplicacion-de-Rastreo/assets/56992179/8c77bd8f-740f-4cfe-b5cb-59b33839f1c3">
+
+### Descripción general
+
+<img width="607" alt="Captura de Pantalla 2023-08-10 a la(s) 3 41 36 p m" src="https://github.com/perezgarridogilb/Engineering-Project-de-Aplicacion-de-Rastreo/assets/56992179/90b8cc6c-a136-4c5e-a516-c74d7801cd87">
+
+- Depende de lo que se busca
+
+### Propósito general
+
+<img width="611" alt="Captura de Pantalla 2023-08-10 a la(s) 3 42 42 p m" src="https://github.com/perezgarridogilb/Engineering-Project-de-Aplicacion-de-Rastreo/assets/56992179/8372ce89-3599-4a63-a965-98466e71c73b">
+
+- Ejemplo: Servidores web o repositorios de código que podemos tener dentro de nuestras instancias
+
 ### Optimizado para informática
+
+<img width="598" alt="Captura de Pantalla 2023-08-10 a la(s) 3 43 12 p m" src="https://github.com/perezgarridogilb/Engineering-Project-de-Aplicacion-de-Rastreo/assets/56992179/6b2a6731-66b8-436f-b1c0-0b880c2ca3f4">
+
+- Es cómputo intensivo, que requieren procesadores de alto desempeño, tenemos diferentes instancias
+    - C es optimizado para informática
+    - El número es lo que actualmente tenemos o lo que nos ofrece AWS
+
+#### Optimizado para informática (Tipos de carga)
 - Carga de trabajo de procesamiento por lotes
 - Transcodificación de medios
 - Servidores web de alto rendimiento
@@ -102,3 +124,14 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - Servidores de juegos dedicados
 
 ### Optimizado para memoria
+
+<img width="614" alt="Captura de Pantalla 2023-08-10 a la(s) 3 47 30 p m" src="https://github.com/perezgarridogilb/Engineering-Project-de-Aplicacion-de-Rastreo/assets/56992179/a3e8b9ae-db8f-4dad-b654-82ebb8835467">
+
+- Las R, Z, X, el tipo de instancia que es más optimizada para memoria
+- Cargas de trabajo que procesan grandes conjuntos de datos en la memoria
+
+#### Optimizado para memoria
+- Bases de Datos
+- Cache Distribuido
+- Aplicaciones BI
+- Aplicaciones para procesamiento en tiempo real
