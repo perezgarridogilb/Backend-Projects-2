@@ -130,8 +130,59 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - Las R, Z, X, el tipo de instancia que es más optimizada para memoria
 - Cargas de trabajo que procesan grandes conjuntos de datos en la memoria
 
-#### Optimizado para memoria
-- Bases de Datos
+#### Optimizado para memoria (Casos de uso)
+- Bases de Datos (Relacionales como no relacionales de alto rendimiento)
 - Cache Distribuido
 - Aplicaciones BI
 - Aplicaciones para procesamiento en tiempo real
+
+### Optimizado para almacenamiento
+
+<img width="613" alt="Captura de Pantalla 2023-08-13 a la(s) 8 34 30 p m" src="https://github.com/perezgarridogilb/Backend-Projects-2/assets/56992179/ea23d5b2-112d-4345-9fbc-924f2ccf0ca1">
+
+- Alto acceso secuencial de escritura y de lectura para grandes conjuntos de datos
+
+#### Optimizado para almacenamiento (Casos de uso)
+- Procesamiento de transacciones
+- Bases de datos relacionales y NoSQL
+- Redis
+- Almacenamiento de datos 
+
+- Amplia gama de instancias *que sólo va hacer uso de lo que se necesita*.
+
+## Grupos de seguridad y puertos clásicos
+
+### Grupos de seguridad
+- Son fundamentales para la seguridad dentro de la red en AWS
+- Si queremos controlar todo el tráfico dentro y fuera de nuestras instancias de EC2 vamos a ocupar grupos de seguridad.
+- Los grupos de seguridad sólo contienen reglas de permiso y no contienen otro tipo de reglas para poder entrar el tráfico hacia internet y salir las solicitudes que hacemos dentro de nuestras instancias a internet.
+- Va a funcionar como si tuvieramos un firewall o una puerta hacia internet y fuera de ella.
+    - También dentro de los ecosistemas o servicios que vamos a estar utilizando dentro de AWS
+- Poder regular qué accesos queremos, qué puertos vamos a utilizar
+- Si queremos utilizar un puerto ssh 22, vamos a poder denegarlo o también permitirlo y regulamos este tipo de accesos.
+- Si queremos un rango de IP's que sólo van a poder entrar a nuestra instancia que van a poder usar el puerto ssh 22 vamos a poder configurarlo dentro del grupo de seguridad
+- **También se puede referenciar por IP**, configurando la comunicación entrante desde nuestros clientes a la máquina EC2
+- También comunicarnos desde la instancia hacia los servicios de internet (salida).
+
+### ¿Qué necesitas saber?
+- Adjuntar varias instancias
+    - Componente que actua como un firewall
+- Bloqueando a una región/VPC
+- Vive "fuera".
+- Grupo de seguridad para acceso SSH.
+- Tiempo de espera.
+- Conexión rechazada. 
+
+### Referencia a otros grupos de seguridad
+- Se puede tener más instancias.
+- Más grupos de seguridad.
+Se pueden ir referenciando dentro de nuestra instancia, dentro de nuestro grupo de seguridad, dentro de AWS.
+
+### Puertos clásicos
+- 22 - SSH
+- 21 FTP
+- 22 SFTP
+- 80 HTTP
+- 443 - HTTPS
+- 3389 - RDP (Escritorio remoto para sistemas operativos windows)
+
