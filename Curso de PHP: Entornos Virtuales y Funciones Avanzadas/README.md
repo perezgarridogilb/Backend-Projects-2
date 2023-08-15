@@ -79,3 +79,65 @@ La mayoría de estas constantes inician con doble guion bajo. Algunos ejemplos s
 - __DIR__
 - ClassName::class
 
+## Ámbito de las variables
+El scope (ó ámbito de las variables) es el contexto en donde una variable es definida. Usualmente, la mayor parte del tiempo una variable tiene un ámbito simple, es decir, está disponible en todo el archivo e incluso en otros archivos donde se haga un require.
+
+### Ámbito local
+Cuando empezamos a usar funciones el ámbito de cualquier variable definida dentro de la función pasa a ser un ámbito local.
+
+En otras palabras, esa variable sólo existe dentro de la función.
+
+### La palabra reservada global
+Cuando queremos que una variable externa exista dentro de una función sin necesidad de pasarla como parámetro podemos usar la palabra reservada "global".
+
+## Variables superglobales
+- Disponibles en todo el scope
+Las variables superglobales son variables predefinidas por PHP que están disponibles en cualquier parte del código, incluso sin necesidad de usar la palabra reservada *global*.
+
+Algunos ejemplos son...
+```
+$GLOBALS
+$_SERVER
+$_GET
+$_POST
+$_FILES
+$_COOKIE
+$_SESSION
+$_REQUEST
+$_ENV
+```
+
+## Redirecciones
+
+### La función header()
+- En el modelo cliente/servidor, es común querer enviar información extra (autenticación, control de cookies, etc.) Esto lo podemos hacer con la función header.
+
+### Redirecciones
+Uno de los headers que podemos mandar son los redirects, es decir, el servidor le puede responder al navegador: "Oye, redirige al usuario a esta página".
+
+```
+header("location: platzi.com");
+```
+
+También puedes redirigir a archivos específicos, pero ten cuidado de no generar un bucle de redirecciones, es decir:
+
+```
+/* page.php */
+header("location: index.php);
+
+/* index.php */
+header("location: page.php");
+```
+
+### Consideraciones
+Los encabezdos siempre deben ser enviados ante de enviar el cuerpo de la petición, es decir, antes de mandar el contenido. 
+- Eso quiere decir que, si imprimes HTML o cualquier otra cosa que genere cuerpo, al intentar redirigir con header obtendrás un error (**Siempre al inicio de la petición**).
+- Antes del cuerpo.
+
+## Funciones variables
+Se ejecutan `$n1()`, revisar ejemplo.
+
+## Parámetros por referencia
+### ¿En donde guarda la computadora las variables?
+- Cuando se declara una variable, lo que sucede es que se ocupa un lugar en la memoria para guardar el valor de dicha variable. ¿Y cómo sabe PHP qué lugar de memoria se ocupó? Bueno, PHP lo sabe porque guarda la referencia de ese lugar.
+
