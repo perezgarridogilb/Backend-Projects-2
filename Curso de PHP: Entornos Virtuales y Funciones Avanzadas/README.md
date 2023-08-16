@@ -141,3 +141,4 @@ Se ejecutan `$n1()`, revisar ejemplo.
 ### ¿En donde guarda la computadora las variables?
 - Cuando se declara una variable, lo que sucede es que se ocupa un lugar en la memoria para guardar el valor de dicha variable. ¿Y cómo sabe PHP qué lugar de memoria se ocupó? Bueno, PHP lo sabe porque guarda la referencia de ese lugar.
 
+## Argumentos a profundidad
