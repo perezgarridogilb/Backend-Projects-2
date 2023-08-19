@@ -142,3 +142,55 @@ Se ejecutan `$n1()`, revisar ejemplo.
 - Cuando se declara una variable, lo que sucede es que se ocupa un lugar en la memoria para guardar el valor de dicha variable. ¿Y cómo sabe PHP qué lugar de memoria se ocupó? Bueno, PHP lo sabe porque guarda la referencia de ese lugar.
 
 ## Argumentos a profundidad
+
+## Funciones anónimas
+Las funciones anónimas (ó también se encuentran como Closures) son funciones que podemos definir sin necesidad de asignarles un nombre.
+
+Son muy similares a los callbacks de JavaScript.
+
+Las podemos guardar dentro de variables, pero su uso más común es pasarlas como parámetro de otra función.
+
+Las funciones anónimas son una instancia de la clase Closure.
+
+## Funciones anónimas dentro de una variable
+```
+$suma = function($n1, $n2) { 
+    return $n1 + $n2;
+}
+
+echo $suma(5, 5);
+```
+
+Una función callback suele ser más útil si la pasamos como parámetro de una función.
+Array_map : recorre cada uno de los elementos de mi arreglo y le aplica la función que nosotros deseemos, creando un nuevo arreglo
+```
+$numbers = [1, 2, 3, 4];
+
+$numbers_by_2 = array_map(fuction($current) {
+    return $current * 2;
+}, $numbers);
+
+var_dump($numbers_by_2);
+```
+
+## Arrow functions
+
+### ¿Qué son las arrow functions?
+- Las arrow functions son funciones que se pueden definir en una sola línea. Su sintaxis es muy parecida a las arrow functions de JavaScript, mientras que su funcionamiento es muy parecido a las Lambdas de Python
+
+- Fueron introducidas en PHP 7.4 como una sintaxis más concisa para las funciones anónimas. Estas también son implementadas usando la clase Closure.
+
+- La diferencia con las funciones anónimas es que las funciones flecha NO declaran un scope local. Este es un ejemplo:
+
+```
+$add_one_michi = fn($current_michis) => $current_michis + 1;
+echo $add_one_michi(7);
+```
+
+### También podemos usarlas como callbacks
+El mismo ejemplo de la clase anterior con arrow functions:
+```
+$numbers = [1,2,3,4];
+$numbers_by_2 = array_map(fb($current) => $current * 2, $numbers);
+var_dump($numbers_by_2);
+```
