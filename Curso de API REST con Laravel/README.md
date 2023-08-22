@@ -65,6 +65,19 @@ Esta linea nos permite crear, controlador, migración y factory
 
 ## Versión 1: recurso
 
-###
+### Modificar los datos de manera virtual sin modificar lo que realmente tenemos en la Base de Datos
 
-- Crea la clase que nos dará mejor apariencia: `php artisan make:resource V1/PostResource`
+- Crea la clase que nos dará **mejor apariencia**: `php artisan make:resource V1/PostResource`
+    - Es mejor versionarlo
+
+- En vez de usar un recurso específico usamos todos los Posts
+
+```
+Route::apiResource('v1/posts', App\Http\Controllers\Api\V1\PostController::class)
+->only(['index','show']);
+```
+
+- Al trabajar directamente con laravel nos dice cuál es el estandar correcto para trabajar (se había hecho mención a los estilos correspondientes del paginado desde la llave meta)
+
+- Podemos retornar los datos sin pasar por este formato `return PostResource::collection(Post::latest()->paginate());`, sin embargo, nos interesa que se envíen los campos que se han definido, no `Post::latest()->paginate();`
+ - Si se quiere una configuración adicional lo que tenemos que hacer es crear otro recurso con otra configuración, pero por el momento la necesidad exigida por el cliente requiere que en la colección veamos los mismos datos que cuando vemos un recurso individual

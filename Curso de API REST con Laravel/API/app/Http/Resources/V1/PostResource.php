@@ -17,6 +17,9 @@ class PostResource extends JsonResource
         return [
             'title' => $this->title,
             'slug' => $this->slug,
+            /** Campo virtual dentro del modelo
+             * O dentro de la entidad Post
+             */
             'excerpt' => $this->excerpt,
             'content' => $this->content,
         ];
