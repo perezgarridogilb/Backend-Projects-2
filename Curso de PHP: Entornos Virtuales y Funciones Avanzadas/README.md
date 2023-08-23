@@ -194,3 +194,17 @@ $numbers = [1,2,3,4];
 $numbers_by_2 = array_map(fb($current) => $current * 2, $numbers);
 var_dump($numbers_by_2);
 ```
+
+## Declaraciones de tipo escalar
+### ¿Qué es una declaración de tipo escalar?
+- Cuando declaramos una función es posible indicar qué tipo de datos queremos recibir en nuestros parámetros. Esto nos da la certeza de que estamos trabajando con el tipo de dato que realmente necesitamos.
+
+- En otras palabras, podemos tipar nuestras funciones. Este comportamiento, por defecto, es tipo coercitivo (opcional), pero podemos hacer que sea obligatorio poniendo la palabra reservada "declare" al inicio de nuestro script.
+
+## Declaraciones de tipo devolución
+### ¿Qué es una declaración de tipo devolución?
+- De la misma forma que podemos declarar qué tipo de datos queremos recibir también podemos declarar qué tipo de dato va a devolver nuestra función.
+
+- Esto le da la certeza a cualquier persona que la implemente de que está trabajando con el tipo de dato que realmente necesita.
+
+- Este comportamiento, por defecto, es de tipo coercitivo (opcional), pero podemos hacer que sea obligatorio poniendo la palabra reservada "declare" al inicio de nuestro script.
