@@ -29,7 +29,7 @@ class LoginController extends Controller
         return $request->validate([
             'email' => 'required|email',
             'password' => 'required',
-            'name' => 'requiered' // desde donde se conecta
+            'name' => 'required' // desde donde se conecta
         ]);
     }
 }

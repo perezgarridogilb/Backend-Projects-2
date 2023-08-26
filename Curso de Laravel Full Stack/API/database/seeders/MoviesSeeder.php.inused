@@ -1,0 +1,38 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Movie;
+use Illuminate\Database\Seeder;
+
+/* use App\Models\Seeder; */
+
+class MoviesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        /**
+         * Eliminar siempre la tabla en caso de que exista
+         */
+        Movie::truncate();
+
+        $faker = \Faker\Factory::create();
+        /**
+         * Faker nos permite generar datos que tengan cierta formas
+         */
+
+/*          for ($i=0; $i < 10; $i++) { 
+            Movie::create([
+                'title' => $faker->sentence,
+                'synopsis' => $faker->paragraph,
+                'year' => $faker->randomDigit,
+                'cover' => $faker->sentence
+            ]);
+         } */
+    }
+}
