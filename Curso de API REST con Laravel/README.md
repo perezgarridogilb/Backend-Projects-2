@@ -25,6 +25,7 @@ Esta linea nos permite crear, controlador, migración y factory
 - 201 - Created
 - 204 - No content
 
+¿Con qué número comienza la serie de redirección?
 
 ### 4xx - Bad request
 - 401 - Unauthorized
@@ -112,5 +113,8 @@ Versión 2: recurso
 composer require laravel/sanctum
 # Tablas correspondientes para el funcionamiento de Laravel Sanctum (Tokens)
 php artisan migrate
+
+#
+php artisan make:controller Api/LoginController
 ```
 
