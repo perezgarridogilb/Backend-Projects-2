@@ -31,7 +31,7 @@ php artisan make:test ExampleTest --unit
 ```
 
 - El archivo (functions.php) lo estamos dando de alta en (composer.json) para que pueda ser utilizada desde cualquier sitio en el entorno
-
+- Actualizamos la llave de autocarga.
 ```
     "autoload": {
         "psr-4": {
@@ -49,3 +49,10 @@ php artisan make:test ExampleTest --unit
 ```
 composer dump
 ```
+
+## Mutator & Accessor
+
+### Mutator
+Un Mutator transforma un atributo antes de ser almacenado.
+### Accessor
+Un Accessor transforma un atributo antes de ser presentado.
