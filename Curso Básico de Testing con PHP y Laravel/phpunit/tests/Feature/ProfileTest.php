@@ -18,6 +18,7 @@ class ProfileTest extends TestCase
         Storage::fake('local');
 
         $response = $this->post('profile', [
+            /** Trabajando con información ficticia (ubicada en "framework/testing") */
             'photo' => $photo = UploadedFile::fake()->image('photo.png')
         ]);
 
@@ -26,7 +27,15 @@ class ProfileTest extends TestCase
         $response->assertRedirect('profile');
     }
 
-    public function test_photo_required($param) {
-        
+    /**
+     * Se está comprobando un error respecto a la foto. Para esto
+     * se configuró el mensaje de error
+     *
+     * @return void
+     */
+    public function test_photo_required() {
+        $response = $this->post('profile', ['photo' => '']);
+
+        $response->assertSessionHasErrors('photo');
     }
 }

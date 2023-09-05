@@ -7,10 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    @if (@errors->any())
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    @endif
     <form action="profile" method="post" enctype="multipart/form-data">
-    @csrf
-    <input type="file" name="photo">
-    <input type="submit" value="Enviar">
+        {{-- Para indicarle a laravel que nuestro formulario es seguro --}}
+        @csrf
+        <input type="file" name="photo">
+
+        <input type="submit" value="Enviar">
     </form>
 </body>
 </html>
