@@ -19,7 +19,5 @@ class HomeTest extends TestCase
         ->get('/')
         ->assertStatus(200)
         ->assertSee('No hay etiquetas');
-
-        $response->assertStatus(200);
     }
 }
