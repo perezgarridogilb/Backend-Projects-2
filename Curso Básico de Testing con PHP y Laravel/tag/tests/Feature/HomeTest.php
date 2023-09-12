@@ -13,6 +13,9 @@ class HomeTest extends TestCase
      *
      * @return void
      */
+
+     use RefreshDatabase;
+
     public function testEmpty()
     {
         $response = $this
