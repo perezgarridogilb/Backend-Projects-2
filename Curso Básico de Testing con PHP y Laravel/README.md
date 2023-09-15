@@ -61,3 +61,6 @@ Un Accessor transforma un atributo antes de ser presentado.
 Mejoramos nuestro código y garantizamos que no hemos dañado nada. Ejecuto todos mis test ´php artisan test´ y  verifico que no he dañado el resto de funciones en mi sistema.
 
 ´app/store/profile´
+
+
+Nota: Se puede usar factory desde los tests
