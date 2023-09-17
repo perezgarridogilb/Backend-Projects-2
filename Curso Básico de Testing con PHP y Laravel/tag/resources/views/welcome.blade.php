@@ -8,8 +8,28 @@
         <h4>Listado de Etiquetas</h4>
     </head>
 <body>
+
+    {{--  
+    forelse es básicamente un shorthand para:   
+    @foreach($tags as $tag)
+
+    @endforeach
+
+    @if(count($tags) == 0)
+    <tr>
+	    <td>
+		<p>No hay etiquetas</p>
+	    </td>
+    </tr>
+    @endif 
+    --}}
+
     @forelse ($tags as $tag)
-        
+       <tr>
+        <td>
+            {{ $tag->name }}
+        </td>
+        </tr> 
     @empty
         <tr>
             <td>
