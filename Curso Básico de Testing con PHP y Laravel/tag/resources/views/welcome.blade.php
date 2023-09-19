@@ -8,7 +8,14 @@
         <h4>Listado de Etiquetas</h4>
     </head>
 <body>
-
+@if ($errors->any())
+<ul class="list-none p-4 bg-red-100 text-red-500">
+    @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach
+</ul>
+    
+@endif
     {{--  
     forelse es básicamente un shorthand para:   
     @foreach($tags as $tag)
@@ -34,6 +41,9 @@
        <tr>
         <td>
             {{ $tag->name }}
+        </td>
+        <td>
+            {{ $tag->slug }}
         </td>
         <td>
             <form action="tags/{{ $tag->id }}" method="post">

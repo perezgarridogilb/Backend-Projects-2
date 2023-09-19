@@ -46,11 +46,11 @@ coment: Se me ocurrió utilizar la herramienta de IA ChatGPT, para hacer varias 
 ### Investiga la empresa
 
 - Página web; producto, qué es lo que hacen, en qué industria están, que clase de empresa son.
-- Noticias en Google
-- Perfil de fundadores o CEO
+- Noticias en Google.
+- Perfil de fundadores o CEO.
 - Página de LinkedIn.
 - Presencia en redes sociales.
-- Reseñas (Indeed o Glassdor).
+- Reseñas (Indeed o Glassdor): realidad.
 
 ## Investiga la vacante
 
@@ -72,3 +72,12 @@ coment: Se me ocurrió utilizar la herramienta de IA ChatGPT, para hacer varias 
 - ¿Qué has logrado en tus experiencias pasadas?
 - ¿Qué hace diferente a tu perfil?
 - ¿Has destacado en proyectos en tu vida académica?
+
+
+Pitch: Historia personal
+✅Debe contener estos puntos:
+
+El impacto en tu trabajo o logros, explica con cifras
+Habilidades blandas
+Diferenciadores profesionales
+❌Saber ciertas tecnologias no es un diferenciador
